@@ -1,6 +1,6 @@
-# CLAUDE.md
+# AGENTS.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Guidance for AI coding agents working in this repository.
 
 ## What this repo is
 
@@ -25,4 +25,7 @@ Never bulk-import skill packs or auto-generate batches of skills.
 
 ## Layout
 
-Skills follow the Claude Code skill format: one directory per skill containing a `SKILL.md` with YAML frontmatter (`name`, `description`) and optional supporting files next to it. The `description` drives when the skill triggers, so it should say precisely what the skill does and when to use it.
+- `skills/<name>/` — the curated collection. One directory per skill with a `SKILL.md` (YAML frontmatter: `name`, `description`) and optional supporting files next to it. The `description` drives when the skill triggers, so it should say precisely what the skill does and when to use it.
+- `.claude/skills/` — internal skills for maintaining this repo itself; not part of the collection.
+
+To bring in a skill found elsewhere, use the `adopt-skill` internal skill. It decides whether to vendor the skill as-is or rewrite it from scratch.
