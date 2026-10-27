@@ -1,0 +1,46 @@
+- Mode: rewritten
+- Source:
+  - https://github.com/humanlayer/humanlayer/tree/main/apps/riptide-rpi-claude-plugin/skills (`create-research`, `create-research-questions`, and their `references/` templates) at 0dbe4f5
+  - https://github.com/EveryInc/compound-engineering-plugin/tree/main/skills/ce-explain (`SKILL.md`, `references/orchestration.md`, `references/intake.md`, `references/agents/behavior-trace-scout.md`) and `skills/ce-plan/references/agents/git-history-analyzer.md` at 00d0a5b
+  - https://github.com/trailofbits/skills/tree/main/plugins/audit-context-building (`SKILL.md`, `agents/function-analyzer.md`, `resources/ANALYSIS_FORMAT.md`) at 196a907
+- Adopted: 2026-10-27
+- Notes:
+  - **Taken from HumanLayer:**
+    - descriptive research questions with the planned change stripped out
+    - user pointers kept verbatim
+    - describe, don't prescribe
+    - headings that state a takeaway
+    - call trees and file trees beside the prose
+    - how each part is tested, or "no tests"
+    - coverage disclosure
+    - open questions
+  - **Taken from Every:**
+    - the trace outline (entry, flow, boundaries, failure paths, gaps)
+    - one subagent per ownership boundary, 2-4 of them; more than four means the question is still unscoped
+    - read the source yourself to settle conflicting reports
+    - the documented / inferred / unknown split for rationale
+    - a missing record is not proof that there was no reason
+    - check that an old constraint still applies
+    - the git archaeology commands (`blame -C -C -C`, `log -S`, `log --follow`, `shortlog`)
+  - **Taken from Trail of Bits:**
+    - follow the calls and walk every path through the callee
+    - never infer behavior from a name
+    - an assumption that nothing establishes is recorded as `nothing found`
+    - every claim cites a line or becomes an open question
+    - no hedge words
+  - **New:**
+    - the consumers lens: other repos via `gh search code`, shared tables and topics, deploy config, runtime evidence, and "no caller found" kept as a scoped fact
+    - scoping by intended use (review vs plan)
+    - the "Load-bearing facts" section as a checklist for reviewing a diff or a plan
+    - a "Who to ask" section
+    - not tied to any host: it finds the code host, tracker, docs, and tools in step 1, and lists unreachable sources under "Not covered"
+    - the commit → PR/MR → ticket lookup done with plain git (IDs in messages, the merge found via `--ancestry-path --merges`), then read with whatever CLI or connected tool reaches the host
+    - finding the tickets that shaped an area by counting ticket IDs in `git log`
+    - stepping past a mechanical commit that `blame` lands on (`blame <sha>^`, `log -L`)
+    - stating what a cross-repo code search covered beside any result
+    - `shortlog` with `--no-merges` and bot accounts ignored
+  - **Wording:** the Trail of Bits ideas (CC-BY-SA-4.0) are restated in new words and with new examples, not copied
+  - **Dropped:**
+    - HumanLayer's `.humanlayer/tasks/` artifact layout, the named agent types, cloud permalinks, and the frontmatter template
+    - Every's recap, diff, and idea modes; its flag parsing; its HTML explainer and publishing destinations; and model-tier routing
+    - Trail of Bits' security-audit framing, its workflow script, the per-function record schema, and the domain notes for contracts and firmware
