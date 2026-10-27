@@ -1,4 +1,0 @@
-- Mode: rewritten
-- Source: https://github.com/mattpocock/skills/blob/main/skills/engineering/improve-codebase-architecture/SKILL.md (plus `codebase-design` and `domain-modeling`, which it depends on), at 5beb35b
-- Adopted: 2026-10-26
-- Notes: Took the deep-module vocabulary, git-churn scoping, the deletion test, "one adapter = hypothetical seam", dependency categories → test strategy, replace-don't-layer testing, no interfaces before a pick, hand-off to `grilling`, and a condensed design-it-twice. Dropped the Tailwind/Mermaid HTML report (candidates go in chat), the GLOSSARY.md/ADR side effects, and the Ousterhout background the model already knows.

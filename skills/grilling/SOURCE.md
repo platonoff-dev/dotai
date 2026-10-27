@@ -1,6 +1,0 @@
-- Mode: vendored
-- Source: https://github.com/mattpocock/skills/blob/main/skills/productivity/grilling/SKILL.md
-- Commit: 5beb35b040e3de97e54fa9e386d7e42d15c295c2
-- License: MIT
-- Adopted: 2026-10-26
-- Notes: SKILL.md byte-identical. Omitted upstream `agents/openai.yaml` (Codex display metadata only). Upstream's `grill-me` / `grill-with-docs` wrappers not adopted; invoke `/grilling` directly.

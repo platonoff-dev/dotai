@@ -45,18 +45,7 @@ Present the decision and the reasoning to the user before writing files.
 
 Put the skill in `skills/<name>/`, with a kebab-case name that matches the frontmatter `name`.
 
-Add a `SOURCE.md` next to `SKILL.md` that records provenance:
-
-```markdown
-- Mode: vendored | rewritten
-- Source: <url or path>
-- Commit: <sha>            # vendored only
-- License: <spdx id>       # vendored only
-- Adopted: <YYYY-MM-DD>
-- Notes: <local changes if vendored; ideas taken if rewritten>
-```
-
-Vendored files stay byte-identical to upstream. Record any local edit in `Notes` so a later re-sync can reapply it.
+Don't add provenance files. Name the source (URL and commit; license too if vendored) in the commit message.
 
 ## 5. Report
 

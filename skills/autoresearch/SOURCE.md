@@ -1,4 +1,0 @@
-- Mode: rewritten
-- Source: https://github.com/uditgoenka/autoresearch (050e30dc4ba0974b03f2873111b9901ec3211390), https://github.com/karpathy/autoresearch (228791fb499afffb54b46200aca536f79142f117, program.md)
-- Adopted: 2026-10-26
-- Notes: Took the core metric loop only (Goal/Scope/Verify/Guard/Iterations contract, guard gate, bounded default, never push) from uditgoenka; dropped the other 13 subcommands, orchestrator, hooks and scripts. From Karpathy's program.md: frozen eval harness, simplicity criterion, redirect run output to a log, run timeout, never stop to ask, reset-based dedicated branch. Added noise measurement (median of 3, keep threshold ~2x spread), adapted from uditgoenka's regression gate, plus a final broader check against metric overfitting.
